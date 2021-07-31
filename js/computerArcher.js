@@ -10,6 +10,7 @@ class computerArcher {
       this.image = loadImage("./assets/computerArcher.png");
   
       World.add(world, this.body);
+      Matter.Body.setAngle(this.body, -PI / 2);
     }
   
     display() {

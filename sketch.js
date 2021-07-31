@@ -5,7 +5,7 @@ const Constraint = Matter.Constraint;
 
 var engine, world;
 var canvas;
-var palyer, playerBase;
+var player, playerBase;
 var computer, computerBase;
 var playerarcher;
 var arrow;
@@ -48,9 +48,8 @@ function setup() {
   );
 
   //Create an arrow Object
-  
-  
-}
+  arrow = new PlayerArrow(playerArcher.body.position.x, playerArcher.body.position.y,100,10)
+  }
 
 function draw() {
   background(180);
@@ -79,8 +78,9 @@ function draw() {
   
   //if Space (32) key is pressed call shoot function of playerArrow
   if(keyCode === 32){
+    arrow.shoot(playerArcher.body.angle);
     //Call shoot() function and pass angle of playerArcher
-
+      
 
   }
 }
